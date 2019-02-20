@@ -17,10 +17,7 @@ load("@io_bazel_rules_python//python:pip.bzl", "pip_import","pip_repositories")
 pip_repositories()
 
 
-## Python third-party libraries
-
-
-### Python third part libraries
+### Python third-party libraries
 ## python-openflow library
 pip_import(
     name = "python-openflow",
@@ -37,6 +34,6 @@ pip_import(
     name="ryu",
     requirements = "//:requirements.txt"
 )
-load("@python-openflow//:requirements.bzl", _ryu_install = "pip_install")
+load("@ryu//:requirements.bzl", _ryu_install = "pip_install")
 
 _ryu_install()
